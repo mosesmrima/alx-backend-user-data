@@ -30,9 +30,6 @@ class RedactingFormatter(logging.Formatter):
         super(RedactingFormatter, self).__init__(self.FORMAT)
 
     def format(self, record: logging.LogRecord) -> str:
-        NotImplementedError
-
-    def format(self, record: logging.LogRecord) -> str:
         """filters values in incoming log records"""
         return filter_datum(
             self.fields,
