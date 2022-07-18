@@ -56,9 +56,10 @@ class RedactingFormatter(logging.Formatter):
             self.SEPARATOR,
         )
 
+
 def get_db() -> connection.MySQLConnection:
     """
-    Connect to a secure mysql server
+    Connect to a secure mysql server with env vars
     """
     username = environ.get("PERSONAL_DATA_DB_USERNAME", "root")
     password = environ.get("PERSONAL_DATA_DB_PASSWORD", "")
